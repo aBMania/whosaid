@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+    connectingfood-network:
+        external: true
+
+services:
+    bot:
+        build: .
+        ports:
+            - 9229:9229
+        entrypoint: ['npm', 'run', 'start:dev']
+        volumes:
+            - ./src:/app/src
+            - ./test:/app/test
+            - ./config:/app/config
+            - ./nodemon.debug.json:/app/nodemon.json # Use this nodemon config file to debug
+        networks:
+            - connectingfood-network

@@ -1,0 +1,8 @@
+discord:
+    token: <Your token here>
+
+hasura:
+    host: localhost
+    port: 8080
+
+
